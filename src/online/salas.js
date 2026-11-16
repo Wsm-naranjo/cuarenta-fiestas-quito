@@ -127,7 +127,7 @@ function vista(j, asiento) {
     reparto: j.reparto,
     mazo: j.mazo.length,
     equipos: j.equipos.map((q) => ({ nombre: q.nombre, puntos: q.puntos, carton: q.carton.length })),
-    historial: j.historial.slice(0, 30).map((h) => ocultarAjeno(h, asiento)),
+    historial: j.historial.map((h) => ocultarAjeno(h, asiento)),
     resumenMano: j.resumenMano,
     ganador: j.ganador,
     motivoFin: j.motivoFin,

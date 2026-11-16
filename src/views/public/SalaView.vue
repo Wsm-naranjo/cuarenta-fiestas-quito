@@ -28,6 +28,8 @@ const IMPORTANTES = ['caida', 'limpia', 'caida_limpia', 'ronda', 'cuatro']
 function aplicar(s) {
   if (!s) return
   const hist = s.juego?.historial || []
+  // Revancha: el juego nuevo vuelve a numerar desde 1
+  if (ultimoEventoVisto !== null && hist[0] && hist[0].id < ultimoEventoVisto) ultimoEventoVisto = 0
   if (ultimoEventoVisto === null) {
     ultimoEventoVisto = hist[0]?.id ?? 0
   } else {

@@ -160,11 +160,16 @@ export function nuevoJuego({ reglas = {}, nombres, rng = Math.random } = {}) {
   return estado
 }
 
+const CON_PUNTOS = new Set(['mano', 'caida', 'limpia', 'caida_limpia', 'ronda', 'cuatro', 'sobrantes', 'carton', 'fin'])
+
 function evento(estado, tipo, texto, extra = {}) {
   const ev = { id: ++estado.seq, tipo, texto, ...extra }
   estado.eventos.push(ev)
   estado.historial.unshift(ev)
-  if (estado.historial.length > 40) estado.historial.length = 40
+  // Se guardan las últimas 30 jugadas y TODOS los eventos que dan puntos (para poder revisar el marcador)
+  if (estado.historial.length > 30) {
+    estado.historial = estado.historial.filter((h, i) => i < 30 || CON_PUNTOS.has(h.tipo))
+  }
   return ev
 }
 
