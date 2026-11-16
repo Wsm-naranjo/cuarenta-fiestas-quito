@@ -1,0 +1,1290 @@
+[
+    {
+        "id": 94960,
+        "nombre": "Abg. Martha Anabel Guamani Silva",
+        "corto": "Abg. Guamani",
+        "ini": "AG",
+        "depto": "Talento Humano"
+    },
+    {
+        "id": 96119,
+        "nombre": "Adriana Jacqueline Cabrera Almache",
+        "corto": "Adriana Cabrera",
+        "ini": "AC",
+        "depto": "Salud y Seguridad Ocupacional"
+    },
+    {
+        "id": 96117,
+        "nombre": "Alessandro David Salas Torres",
+        "corto": "Alessandro Salas",
+        "ini": "AS",
+        "depto": "Bodega"
+    },
+    {
+        "id": 88702,
+        "nombre": "Alex Daniel Armas Hidalgo",
+        "corto": "Alex Armas",
+        "ini": "AA",
+        "depto": "Redacción"
+    },
+    {
+        "id": 96083,
+        "nombre": "Alex Joel Caiza Punina",
+        "corto": "Alex Caiza",
+        "ini": "AC",
+        "depto": "Administrativo"
+    },
+    {
+        "id": 97770,
+        "nombre": "Alison Nayeli Barahona Novillo",
+        "corto": "Alison Barahona",
+        "ini": "AB",
+        "depto": "Prolipa"
+    },
+    {
+        "id": 97768,
+        "nombre": "Alisson Mercedes Toapanta Tuso",
+        "corto": "Alisson Toapanta",
+        "ini": "AT",
+        "depto": "Prolipa"
+    },
+    {
+        "id": 97743,
+        "nombre": "Allison Melissa Chasiluisa Reyes",
+        "corto": "Allison Chasiluisa",
+        "ini": "AC",
+        "depto": "Prolipa"
+    },
+    {
+        "id": 101579,
+        "nombre": "Anahi Fernanda Rojas Panamito",
+        "corto": "Anahi Rojas",
+        "ini": "AR",
+        "depto": "Dirección Editorial"
+    },
+    {
+        "id": 101696,
+        "nombre": "Ana María Franco Bailon",
+        "corto": "Ana Franco",
+        "ini": "AF",
+        "depto": "Prolipa"
+    },
+    {
+        "id": 7901,
+        "nombre": "Antonio Rubén Romero Vélez",
+        "corto": "Antonio Romero",
+        "ini": "AR",
+        "depto": "Sistemas"
+    },
+    {
+        "id": 98768,
+        "nombre": "Ariana Alexandra Riera Muñoz",
+        "corto": "Ariana Riera",
+        "ini": "AR",
+        "depto": "Prolipa"
+    },
+    {
+        "id": 97752,
+        "nombre": "Blanca Carolina Lopez Yucas",
+        "corto": "Blanca Lopez",
+        "ini": "BL",
+        "depto": "Prolipa"
+    },
+    {
+        "id": 96125,
+        "nombre": "Blanca Maria Mediavilla Vaca",
+        "corto": "Blanca Mediavilla",
+        "ini": "BM",
+        "depto": "Dirección Editorial"
+    },
+    {
+        "id": 82680,
+        "nombre": "Bryan Daniel Álvarez Cascante",
+        "corto": "Bryan Álvarez",
+        "ini": "BÁ",
+        "depto": "Redacción"
+    },
+    {
+        "id": 98227,
+        "nombre": "Bryan Paúl Vivanco Tapia",
+        "corto": "Bryan Vivanco",
+        "ini": "BV",
+        "depto": "Prolipa"
+    },
+    {
+        "id": 97891,
+        "nombre": "Byron Alfredo Yepez Pozo",
+        "corto": "Byron Yepez",
+        "ini": "BY",
+        "depto": "Prolipa"
+    },
+    {
+        "id": 98311,
+        "nombre": "Camila Jeaneth Vallejo Criollo",
+        "corto": "Camila Vallejo",
+        "ini": "CV",
+        "depto": "Prolipa"
+    },
+    {
+        "id": 97751,
+        "nombre": "Carlos Andres Leon Valverde",
+        "corto": "Carlos Leon",
+        "ini": "CL",
+        "depto": "Prolipa"
+    },
+    {
+        "id": 97762,
+        "nombre": "Carlos Augusto Salazar ProaÑo",
+        "corto": "Carlos Salazar",
+        "ini": "CS",
+        "depto": "Prolipa"
+    },
+    {
+        "id": 69891,
+        "nombre": "Carlos Cristobal Espinoza Lugmaña",
+        "corto": "Carlos Espinoza",
+        "ini": "CE",
+        "depto": "Contabilidad"
+    },
+    {
+        "id": 91198,
+        "nombre": "Carlos David Lara Catagña",
+        "corto": "Carlos Lara",
+        "ini": "CL",
+        "depto": "Redacción"
+    },
+    {
+        "id": 84679,
+        "nombre": "Carlos Eduardo Lascano Chalan",
+        "corto": "Carlos Lascano",
+        "ini": "CL",
+        "depto": "Prolipa"
+    },
+    {
+        "id": 5655,
+        "nombre": "Carlos Felipe Zevallos Ayala",
+        "corto": "Carlos Zevallos",
+        "ini": "CZ",
+        "depto": "Comercial"
+    },
+    {
+        "id": 82720,
+        "nombre": "Carlos Manuel Caceres Tenelanda",
+        "corto": "Carlos Caceres",
+        "ini": "CC",
+        "depto": "Bodega"
+    },
+    {
+        "id": 88773,
+        "nombre": "Carlos Zevallos Ayala",
+        "corto": "Carlos Zevallos",
+        "ini": "CZ",
+        "depto": "Comercial"
+    },
+    {
+        "id": 97740,
+        "nombre": "Catherine Mishel Benavidez Guaman",
+        "corto": "Catherine Benavidez",
+        "ini": "CB",
+        "depto": "Prolipa"
+    },
+    {
+        "id": 97560,
+        "nombre": "Cecilia Gudiño",
+        "corto": "Cecilia Gudiño",
+        "ini": "CG",
+        "depto": "Prolipa"
+    },
+    {
+        "id": 82719,
+        "nombre": "Cesar Cobacango Toapanta",
+        "corto": "Cesar Cobacango",
+        "ini": "CC",
+        "depto": "Bodega"
+    },
+    {
+        "id": 82468,
+        "nombre": "Christian David Alpala Itas",
+        "corto": "Christian Alpala",
+        "ini": "CA",
+        "depto": "Comercial"
+    },
+    {
+        "id": 96109,
+        "nombre": "Christian Fernando Arias Gomez",
+        "corto": "Christian Arias",
+        "ini": "CA",
+        "depto": "Diseño"
+    },
+    {
+        "id": 4082,
+        "nombre": "Christian Hernan Lema Calderón",
+        "corto": "Christian Lema",
+        "ini": "CL",
+        "depto": "Comercial"
+    },
+    {
+        "id": 93829,
+        "nombre": "Christian Joel Cucalon Franco",
+        "corto": "Christian Cucalon",
+        "ini": "CC",
+        "depto": "Redacción"
+    },
+    {
+        "id": 96738,
+        "nombre": "Cindy Paola Zambrano Fajardo",
+        "corto": "Cindy Zambrano",
+        "ini": "CZ",
+        "depto": "Mantenimiento"
+    },
+    {
+        "id": 97874,
+        "nombre": "Cristian Emilio Mejia Jimenez",
+        "corto": "Cristian Mejia",
+        "ini": "CM",
+        "depto": "Prolipa"
+    },
+    {
+        "id": 98295,
+        "nombre": "Cristofer Ariel Martinez Molina",
+        "corto": "Cristofer Martinez",
+        "ini": "CM",
+        "depto": "Prolipa"
+    },
+    {
+        "id": 97758,
+        "nombre": "Daniel Andres Pozo Rivas",
+        "corto": "Daniel Pozo",
+        "ini": "DP",
+        "depto": "Prolipa"
+    },
+    {
+        "id": 96084,
+        "nombre": "Daniel Homero Calderon Alba",
+        "corto": "Daniel Calderon",
+        "ini": "DC",
+        "depto": "Bodega"
+    },
+    {
+        "id": 4531,
+        "nombre": "Dany Jose Soria Chisaguano",
+        "corto": "Dany Soria",
+        "ini": "DS",
+        "depto": "Comercial"
+    },
+    {
+        "id": 94514,
+        "nombre": "Dario Wladimir Vargas Ramirez",
+        "corto": "Dario Vargas",
+        "ini": "DV",
+        "depto": "Redacción"
+    },
+    {
+        "id": 5763,
+        "nombre": "Darwin Fernando Casame Gualotuña",
+        "corto": "Darwin Casame",
+        "ini": "DC",
+        "depto": "Sistemas"
+    },
+    {
+        "id": 64394,
+        "nombre": "Darwin Fernando Ruales Banegas",
+        "corto": "Darwin Ruales",
+        "ini": "DR",
+        "depto": "Facturación"
+    },
+    {
+        "id": 96557,
+        "nombre": "David Alexander Romero Farinango",
+        "corto": "David Romero",
+        "ini": "DR",
+        "depto": "Bodega"
+    },
+    {
+        "id": 4533,
+        "nombre": "David Mauricio Calderon Alba",
+        "corto": "David Calderon",
+        "ini": "DC",
+        "depto": "Comercial"
+    },
+    {
+        "id": 69380,
+        "nombre": "David Misael Aules Aules",
+        "corto": "David Aules",
+        "ini": "DA",
+        "depto": "Bodega"
+    },
+    {
+        "id": 96087,
+        "nombre": "Dennis Fernanda Guillen Ordoñez",
+        "corto": "Dennis Guillen",
+        "ini": "DG",
+        "depto": "Diseño"
+    },
+    {
+        "id": 88128,
+        "nombre": "Doris Michelle Caizatoa Llumiquinga",
+        "corto": "Doris Caizatoa",
+        "ini": "DC",
+        "depto": "Redacción"
+    },
+    {
+        "id": 4641,
+        "nombre": "Edgar Patricio Rodriguez Pilco",
+        "corto": "Edgar Rodriguez",
+        "ini": "ER",
+        "depto": "Bodega"
+    },
+    {
+        "id": 96090,
+        "nombre": "Edwin Ernesto Veloz Mejia",
+        "corto": "Edwin Veloz",
+        "ini": "EV",
+        "depto": "Diseño"
+    },
+    {
+        "id": 97861,
+        "nombre": "Edwin Geovanny Armijos Sanchez",
+        "corto": "Edwin Armijos",
+        "ini": "EA",
+        "depto": "Prolipa"
+    },
+    {
+        "id": 101584,
+        "nombre": "Elba Patricia Benavides Sánchez",
+        "corto": "Elba Benavides",
+        "ini": "EB",
+        "depto": "Redacción"
+    },
+    {
+        "id": 96098,
+        "nombre": "Elvis Andres Pilamonta Gualpa",
+        "corto": "Elvis Pilamonta",
+        "ini": "EP",
+        "depto": "Redacción"
+    },
+    {
+        "id": 96737,
+        "nombre": "Emerson Ariel Chushig Samueza",
+        "corto": "Emerson Chushig",
+        "ini": "EC",
+        "depto": "Marketing"
+    },
+    {
+        "id": 82064,
+        "nombre": "Emily Dayana Gutierrez Conde",
+        "corto": "Emily Gutierrez",
+        "ini": "EG",
+        "depto": "Dirección Editorial"
+    },
+    {
+        "id": 53474,
+        "nombre": "Erick Gustavo Ruiz Castelo",
+        "corto": "Erick Ruiz",
+        "ini": "ER",
+        "depto": "Redacción"
+    },
+    {
+        "id": 96107,
+        "nombre": "Erika Alexandra Zambrano Chiluisa",
+        "corto": "Erika Zambrano",
+        "ini": "EZ",
+        "depto": "Diseño"
+    },
+    {
+        "id": 95284,
+        "nombre": "Erika Vanessa Zalamea Yépez",
+        "corto": "Erika Zalamea",
+        "ini": "EZ",
+        "depto": "Redacción"
+    },
+    {
+        "id": 97868,
+        "nombre": "Esteban Alejandro Estevez Gallardo",
+        "corto": "Esteban Estevez",
+        "ini": "EE",
+        "depto": "Prolipa"
+    },
+    {
+        "id": 97756,
+        "nombre": "Fabricio Alexander Perez Moya",
+        "corto": "Fabricio Perez",
+        "ini": "FP",
+        "depto": "Prolipa"
+    },
+    {
+        "id": 98234,
+        "nombre": "Fabricio Fabián Quezada Robles",
+        "corto": "Fabricio Quezada",
+        "ini": "FQ",
+        "depto": "Prolipa"
+    },
+    {
+        "id": 40869,
+        "nombre": "Flavio Homero Chamorro Ponce",
+        "corto": "Flavio Chamorro",
+        "ini": "FC",
+        "depto": "Redacción"
+    },
+    {
+        "id": 97866,
+        "nombre": "Francisco Javier Cueva Guamba",
+        "corto": "Francisco Cueva",
+        "ini": "FC",
+        "depto": "Prolipa"
+    },
+    {
+        "id": 97876,
+        "nombre": "Francisco Javier Montenegro Ruiz",
+        "corto": "Francisco Montenegro",
+        "ini": "FM",
+        "depto": "Prolipa"
+    },
+    {
+        "id": 97772,
+        "nombre": "Francisco Jose Fiallos Tapia",
+        "corto": "Francisco Fiallos",
+        "ini": "FF",
+        "depto": "Prolipa"
+    },
+    {
+        "id": 97883,
+        "nombre": "Freddy Marcelo SimbaÑa Chilcanan",
+        "corto": "Freddy SimbaÑa",
+        "ini": "FS",
+        "depto": "Prolipa"
+    },
+    {
+        "id": 96085,
+        "nombre": "Gabriel Alejandro Del Castillo Yepez",
+        "corto": "Gabriel Del",
+        "ini": "GD",
+        "depto": "Redacción"
+    },
+    {
+        "id": 97662,
+        "nombre": "Gema Yaritza Moreira Ubillus",
+        "corto": "Gema Moreira",
+        "ini": "GM",
+        "depto": "Prolipa"
+    },
+    {
+        "id": 97887,
+        "nombre": "Genaro Gabriel Vaca Villamar",
+        "corto": "Genaro Vaca",
+        "ini": "GV",
+        "depto": "Prolipa"
+    },
+    {
+        "id": 97896,
+        "nombre": "Gladis Rocio Sangoquiza Simba",
+        "corto": "Gladis Sangoquiza",
+        "ini": "GS",
+        "depto": "Prolipa"
+    },
+    {
+        "id": 71049,
+        "nombre": "Gleen Rene Manterola Paredes",
+        "corto": "Gleen Manterola",
+        "ini": "GM",
+        "depto": "Redacción"
+    },
+    {
+        "id": 97741,
+        "nombre": "Gregory Joel Camacho NoroÑa",
+        "corto": "Gregory Camacho",
+        "ini": "GC",
+        "depto": "Prolipa"
+    },
+    {
+        "id": 98296,
+        "nombre": "Gregory Stalin Ruilova Hermosa",
+        "corto": "Gregory Ruilova",
+        "ini": "GR",
+        "depto": "Prolipa"
+    },
+    {
+        "id": 98091,
+        "nombre": "Guthnara Katherine MuÑoz Correa",
+        "corto": "Guthnara MuÑoz",
+        "ini": "GM",
+        "depto": "Prolipa"
+    },
+    {
+        "id": 96113,
+        "nombre": "Génesis Elizabeth Gutiérrez Mina",
+        "corto": "Génesis Gutiérrez",
+        "ini": "GG",
+        "depto": "Diseño"
+    },
+    {
+        "id": 97767,
+        "nombre": "Henry David Vegne Carcelen",
+        "corto": "Henry Vegne",
+        "ini": "HV",
+        "depto": "Prolipa"
+    },
+    {
+        "id": 97869,
+        "nombre": "Henry Nicolay Flores Aulestia",
+        "corto": "Henry Flores",
+        "ini": "HF",
+        "depto": "Prolipa"
+    },
+    {
+        "id": 97878,
+        "nombre": "Héctor Fabián Pallo Masabanda",
+        "corto": "Héctor Pallo",
+        "ini": "HP",
+        "depto": "Prolipa"
+    },
+    {
+        "id": 101650,
+        "nombre": "Ibeth Cecilia Cedeño Matailo",
+        "corto": "Ibeth Cedeño",
+        "ini": "IC",
+        "depto": "Facturación"
+    },
+    {
+        "id": 97781,
+        "nombre": "Ingrith Dejaneira Revelo Romero",
+        "corto": "Ingrith Revelo",
+        "ini": "IR",
+        "depto": "Prolipa"
+    },
+    {
+        "id": 97771,
+        "nombre": "Iturralde Sergio Basantes",
+        "corto": "Iturralde Basantes",
+        "ini": "IB",
+        "depto": "Prolipa"
+    },
+    {
+        "id": 97879,
+        "nombre": "Jaime Francisco ProaÑo Pacheco",
+        "corto": "Jaime ProaÑo",
+        "ini": "JP",
+        "depto": "Prolipa"
+    },
+    {
+        "id": 96110,
+        "nombre": "Jairo Santiago Achig Pilaguano",
+        "corto": "Jairo Achig",
+        "ini": "JA",
+        "depto": "Diseño"
+    },
+    {
+        "id": 4179,
+        "nombre": "Javier Ignacio Sarasti Montoya",
+        "corto": "Javier Sarasti",
+        "ini": "JS",
+        "depto": "Comercial"
+    },
+    {
+        "id": 71654,
+        "nombre": "Jefferson Darío Guerra Aguirre",
+        "corto": "Jefferson Guerra",
+        "ini": "JG",
+        "depto": "Redacción"
+    },
+    {
+        "id": 97764,
+        "nombre": "Jefferson Gabriel Tasiguano Mosquera",
+        "corto": "Jefferson Tasiguano",
+        "ini": "JT",
+        "depto": "Prolipa"
+    },
+    {
+        "id": 98299,
+        "nombre": "Jennyfer Guadalupe Campoverde Iza",
+        "corto": "Jennyfer Campoverde",
+        "ini": "JC",
+        "depto": "Prolipa"
+    },
+    {
+        "id": 100913,
+        "nombre": "JENNY PATRICIA VARGAS CEVALLOS",
+        "corto": "JENNY VARGAS",
+        "ini": "JV",
+        "depto": "Dirección Editorial"
+    },
+    {
+        "id": 97654,
+        "nombre": "Jessica Alejandrina Martinez Pinos",
+        "corto": "Jessica Martinez",
+        "ini": "JM",
+        "depto": "Prolipa"
+    },
+    {
+        "id": 64392,
+        "nombre": "Jhanet Del Pilar Vasquez Lopez",
+        "corto": "Jhanet Vasquez",
+        "ini": "JV",
+        "depto": "Facturación"
+    },
+    {
+        "id": 98491,
+        "nombre": "Jimena Isabel Delgado Chuquin",
+        "corto": "Jimena Delgado",
+        "ini": "JD",
+        "depto": "Prolipa"
+    },
+    {
+        "id": 97892,
+        "nombre": "Joe Gercyn Quishpe Casa",
+        "corto": "Joe Quishpe",
+        "ini": "JQ",
+        "depto": "Prolipa"
+    },
+    {
+        "id": 87825,
+        "nombre": "Joel Damian Dominguez Aguayo",
+        "corto": "Joel Dominguez",
+        "ini": "JD",
+        "depto": "Redacción"
+    },
+    {
+        "id": 100912,
+        "nombre": "JOHAN ANTONIO LOOR MASTARRENO",
+        "corto": "JOHAN LOOR",
+        "ini": "JL",
+        "depto": "Dirección Editorial"
+    },
+    {
+        "id": 97749,
+        "nombre": "John Israel Jami Castro",
+        "corto": "John Jami",
+        "ini": "JJ",
+        "depto": "Prolipa"
+    },
+    {
+        "id": 85899,
+        "nombre": "Jonathan Eduardo Peña Bastidas",
+        "corto": "Jonathan Peña",
+        "ini": "JP",
+        "depto": "Bodega"
+    },
+    {
+        "id": 97766,
+        "nombre": "Jorge Anibal Vaca Goyes",
+        "corto": "Jorge Vaca",
+        "ini": "JV",
+        "depto": "Prolipa"
+    },
+    {
+        "id": 95283,
+        "nombre": "Jorge David Vallejo Orbe",
+        "corto": "Jorge Vallejo",
+        "ini": "JV",
+        "depto": "Redacción"
+    },
+    {
+        "id": 96116,
+        "nombre": "Jorge Luis Criollo Tocain",
+        "corto": "Jorge Criollo",
+        "ini": "JC",
+        "depto": "Bodega"
+    },
+    {
+        "id": 83140,
+        "nombre": "Jorge Luis Montoya Simbala",
+        "corto": "Jorge Montoya",
+        "ini": "JM",
+        "depto": "Redacción"
+    },
+    {
+        "id": 97763,
+        "nombre": "Jorge Luis Sanango Jimenes",
+        "corto": "Jorge Sanango",
+        "ini": "JS",
+        "depto": "Prolipa"
+    },
+    {
+        "id": 96086,
+        "nombre": "Jose Roberto Galvez Viracocha",
+        "corto": "Jose Galvez",
+        "ini": "JG",
+        "depto": "Diseño"
+    },
+    {
+        "id": 97757,
+        "nombre": "Juan David Perez Bayas",
+        "corto": "Juan Perez",
+        "ini": "JP",
+        "depto": "Prolipa"
+    },
+    {
+        "id": 97867,
+        "nombre": "Julio German Erazo Suarez",
+        "corto": "Julio Erazo",
+        "ini": "JE",
+        "depto": "Prolipa"
+    },
+    {
+        "id": 95282,
+        "nombre": "Karen Estefanía Mozo Tipán",
+        "corto": "Karen Mozo",
+        "ini": "KM",
+        "depto": "Redacción"
+    },
+    {
+        "id": 96079,
+        "nombre": "Karen Zamira Figueroa Guamani",
+        "corto": "Karen Figueroa",
+        "ini": "KF",
+        "depto": "Gerencia General"
+    },
+    {
+        "id": 97759,
+        "nombre": "Karina Elizabeth Quillupangui Santos",
+        "corto": "Karina Quillupangui",
+        "ini": "KQ",
+        "depto": "Prolipa"
+    },
+    {
+        "id": 4176,
+        "nombre": "Karina Ortiz Lozada",
+        "corto": "Karina Ortiz",
+        "ini": "KO",
+        "depto": "Comercial"
+    },
+    {
+        "id": 80348,
+        "nombre": "Karla Paola Rivera Romo Leroux",
+        "corto": "Karla Rivera",
+        "ini": "KR",
+        "depto": "Comercial"
+    },
+    {
+        "id": 97779,
+        "nombre": "Katherine Lizbeth Valdivieso Gavilanez",
+        "corto": "Katherine Valdivieso",
+        "ini": "KV",
+        "depto": "Prolipa"
+    },
+    {
+        "id": 97742,
+        "nombre": "Kelly Juliehanna Carvajal Oyagata",
+        "corto": "Kelly Carvajal",
+        "ini": "KC",
+        "depto": "Prolipa"
+    },
+    {
+        "id": 98493,
+        "nombre": "Kelly Maria Jose Mendez",
+        "corto": "Kelly Jose",
+        "ini": "KJ",
+        "depto": "Prolipa"
+    },
+    {
+        "id": 97053,
+        "nombre": "Kerly Anahí Guamani Nicolalde",
+        "corto": "Kerly Guamani",
+        "ini": "KG",
+        "depto": "Comercial"
+    },
+    {
+        "id": 97663,
+        "nombre": "Lady Stephanie Rodríguez Mendoza",
+        "corto": "Lady Rodríguez",
+        "ini": "LR",
+        "depto": "Prolipa"
+    },
+    {
+        "id": 97760,
+        "nombre": "Ligia Del Carmen Rivas CampaÑa",
+        "corto": "Ligia Rivas",
+        "ini": "LR",
+        "depto": "Prolipa"
+    },
+    {
+        "id": 97614,
+        "nombre": "Liliana Jazmin Urrunaga Eusebio",
+        "corto": "Liliana Urrunaga",
+        "ini": "LU",
+        "depto": "Prolipa"
+    },
+    {
+        "id": 97744,
+        "nombre": "Lina Clara Diaz Chulca",
+        "corto": "Lina Diaz",
+        "ini": "LD",
+        "depto": "Prolipa"
+    },
+    {
+        "id": 97431,
+        "nombre": "Lizeth Guananga",
+        "corto": "Lizeth Guananga",
+        "ini": "LG",
+        "depto": "Prolipa"
+    },
+    {
+        "id": 84198,
+        "nombre": "Luis Brayan Tandayamo Imbaquingo",
+        "corto": "Luis Tandayamo",
+        "ini": "LT",
+        "depto": "Sistemas"
+    },
+    {
+        "id": 97748,
+        "nombre": "Luis Eduardo Herrera Herrera",
+        "corto": "Luis Herrera",
+        "ini": "LH",
+        "depto": "Prolipa"
+    },
+    {
+        "id": 96124,
+        "nombre": "Luis Heriberto Calderon Calle",
+        "corto": "Luis Calderon",
+        "ini": "LC",
+        "depto": "Dirección Editorial"
+    },
+    {
+        "id": 96089,
+        "nombre": "Lupe Marlene Medina Donoso",
+        "corto": "Lupe Medina",
+        "ini": "LM",
+        "depto": "Bodega"
+    },
+    {
+        "id": 98588,
+        "nombre": "Madrid Pisco Alex Fabian",
+        "corto": "Madrid Alex",
+        "ini": "MA",
+        "depto": "Contabilidad"
+    },
+    {
+        "id": 97898,
+        "nombre": "Marcelo Vinicio Villagomez Pillajo",
+        "corto": "Marcelo Villagomez",
+        "ini": "MV",
+        "depto": "Prolipa"
+    },
+    {
+        "id": 97897,
+        "nombre": "Marco Alexander Tituaña Criollo",
+        "corto": "Marco Tituaña",
+        "ini": "MT",
+        "depto": "Prolipa"
+    },
+    {
+        "id": 97754,
+        "nombre": "Maria Belen Molina Yagual",
+        "corto": "Maria Molina",
+        "ini": "MM",
+        "depto": "Prolipa"
+    },
+    {
+        "id": 96104,
+        "nombre": "Maria De Los Angeles Freire",
+        "corto": "Maria Freire",
+        "ini": "MF",
+        "depto": "Diseño"
+    },
+    {
+        "id": 98297,
+        "nombre": "Maria De Los Angeles Vizcaino Baldeon",
+        "corto": "Maria Vizcaino",
+        "ini": "MV",
+        "depto": "Prolipa"
+    },
+    {
+        "id": 97186,
+        "nombre": "Maria Ines Yaguana Vera",
+        "corto": "Maria Yaguana",
+        "ini": "MY",
+        "depto": "Prolipa"
+    },
+    {
+        "id": 97881,
+        "nombre": "Maria Teresa Rodriguez",
+        "corto": "Maria Rodriguez",
+        "ini": "MR",
+        "depto": "Prolipa"
+    },
+    {
+        "id": 96088,
+        "nombre": "Martha Alicia Guitarra Santacruz",
+        "corto": "Martha Guitarra",
+        "ini": "MG",
+        "depto": "Redacción"
+    },
+    {
+        "id": 96081,
+        "nombre": "Mateo David Castro Vera",
+        "corto": "Mateo Castro",
+        "ini": "MC",
+        "depto": "Sistemas"
+    },
+    {
+        "id": 97723,
+        "nombre": "Mayra Asanza",
+        "corto": "Mayra Asanza",
+        "ini": "MA",
+        "depto": "Prolipa"
+    },
+    {
+        "id": 97862,
+        "nombre": "Mayra Teresa Barrionuevo Escobar",
+        "corto": "Mayra Barrionuevo",
+        "ini": "MB",
+        "depto": "Prolipa"
+    },
+    {
+        "id": 97765,
+        "nombre": "Mayra Veronica Unaucho Rojas",
+        "corto": "Mayra Unaucho",
+        "ini": "MU",
+        "depto": "Prolipa"
+    },
+    {
+        "id": 96120,
+        "nombre": "Mercedes Romina Yanez Zambrano",
+        "corto": "Mercedes Yanez",
+        "ini": "MY",
+        "depto": "Salud y Seguridad Ocupacional"
+    },
+    {
+        "id": 95083,
+        "nombre": "Michael Sebastian Ortiz Jarrin",
+        "corto": "Michael Ortiz",
+        "ini": "MO",
+        "depto": "Sistemas"
+    },
+    {
+        "id": 97747,
+        "nombre": "Mickahela Eduarda Guachilema Peñaloza",
+        "corto": "Mickahela Guachilema",
+        "ini": "MG",
+        "depto": "Prolipa"
+    },
+    {
+        "id": 4538,
+        "nombre": "Miguel Alejandro Calderon Mediavilla",
+        "corto": "Miguel Calderon",
+        "ini": "MC",
+        "depto": "Gerencia General"
+    },
+    {
+        "id": 4532,
+        "nombre": "Monica Patricia Salamea",
+        "corto": "Monica Salamea",
+        "ini": "MS",
+        "depto": "Comercial"
+    },
+    {
+        "id": 97250,
+        "nombre": "Myriam Azucena Valenzuela Pilatasig",
+        "corto": "Myriam Valenzuela",
+        "ini": "MV",
+        "depto": "Prolipa"
+    },
+    {
+        "id": 12020,
+        "nombre": "Mónica Guadalupe Delgado Gallo",
+        "corto": "Mónica Delgado",
+        "ini": "MD",
+        "depto": "Prolipa"
+    },
+    {
+        "id": 97769,
+        "nombre": "Nathaly Camila Navas Rodriguez",
+        "corto": "Nathaly Navas",
+        "ini": "NN",
+        "depto": "Prolipa"
+    },
+    {
+        "id": 70916,
+        "nombre": "Nathaly Michelle Muriel Robalino",
+        "corto": "Nathaly Muriel",
+        "ini": "NM",
+        "depto": "Redacción"
+    },
+    {
+        "id": 96103,
+        "nombre": "Nelson Alejandro Jacome Viteri",
+        "corto": "Nelson Jacome",
+        "ini": "NJ",
+        "depto": "Diseño"
+    },
+    {
+        "id": 97865,
+        "nombre": "Nestor Ramiro Chicaiza Cachipuendo",
+        "corto": "Nestor Chicaiza",
+        "ini": "NC",
+        "depto": "Prolipa"
+    },
+    {
+        "id": 97750,
+        "nombre": "Niurka Loida Ledea Benitez",
+        "corto": "Niurka Ledea",
+        "ini": "NL",
+        "depto": "Prolipa"
+    },
+    {
+        "id": 98209,
+        "nombre": "Olga María Ramírez Solórzano",
+        "corto": "Olga Ramírez",
+        "ini": "OR",
+        "depto": "Prolipa"
+    },
+    {
+        "id": 97755,
+        "nombre": "Oluwafunmilayo Maria Oladoke",
+        "corto": "Oluwafunmilayo Oladoke",
+        "ini": "OO",
+        "depto": "Prolipa"
+    },
+    {
+        "id": 4350,
+        "nombre": "Oscar Alfredo Terán Montenegro",
+        "corto": "Oscar Terán",
+        "ini": "OT",
+        "depto": "Comercial"
+    },
+    {
+        "id": 60609,
+        "nombre": "Pablo Fernando Zambrano Chiluisa",
+        "corto": "Pablo Zambrano",
+        "ini": "PZ",
+        "depto": "Redacción"
+    },
+    {
+        "id": 97745,
+        "nombre": "Paola Elizabeth Flores Lopez",
+        "corto": "Paola Flores",
+        "ini": "PF",
+        "depto": "Prolipa"
+    },
+    {
+        "id": 96753,
+        "nombre": "Patricia Aracely Diaz Erazo",
+        "corto": "Patricia Diaz",
+        "ini": "PD",
+        "depto": "Administrativo"
+    },
+    {
+        "id": 97895,
+        "nombre": "Patricia Gabriela MuÑoz Guaman",
+        "corto": "Patricia MuÑoz",
+        "ini": "PM",
+        "depto": "Prolipa"
+    },
+    {
+        "id": 96115,
+        "nombre": "Patricio Rodriguez Meza",
+        "corto": "Patricio Rodriguez",
+        "ini": "PR",
+        "depto": "Bodega"
+    },
+    {
+        "id": 97893,
+        "nombre": "Paula Emilia Briceño Caicedo",
+        "corto": "Paula Briceño",
+        "ini": "PB",
+        "depto": "Prolipa"
+    },
+    {
+        "id": 97872,
+        "nombre": "Paul Giovanny Granizo Granizo",
+        "corto": "Paul Granizo",
+        "ini": "PG",
+        "depto": "Prolipa"
+    },
+    {
+        "id": 88868,
+        "nombre": "Paulina Stefania Torres Suarez",
+        "corto": "Paulina Torres",
+        "ini": "PT",
+        "depto": "Redacción"
+    },
+    {
+        "id": 97884,
+        "nombre": "René Patricio Tacuri Caiza",
+        "corto": "René Tacuri",
+        "ini": "RT",
+        "depto": "Prolipa"
+    },
+    {
+        "id": 96108,
+        "nombre": "Romina Samantha Gomez Granda",
+        "corto": "Romina Gomez",
+        "ini": "RG",
+        "depto": "Diseño"
+    },
+    {
+        "id": 97873,
+        "nombre": "Sandra Silvana Imbaquingo Erazo",
+        "corto": "Sandra Imbaquingo",
+        "ini": "SI",
+        "depto": "Prolipa"
+    },
+    {
+        "id": 76287,
+        "nombre": "Sebastian Washington Naranjo Mena",
+        "corto": "Sebastian Naranjo",
+        "ini": "SN",
+        "depto": "Sistemas"
+    },
+    {
+        "id": 98492,
+        "nombre": "Silvia Maria Garcia Quimi",
+        "corto": "Silvia Garcia",
+        "ini": "SG",
+        "depto": "Prolipa"
+    },
+    {
+        "id": 57255,
+        "nombre": "Steven Israel Guacan Ichau",
+        "corto": "Steven Guacan",
+        "ini": "SG",
+        "depto": "Sistemas"
+    },
+    {
+        "id": 97761,
+        "nombre": "Tania Mariela Rivera Santillan",
+        "corto": "Tania Rivera",
+        "ini": "TR",
+        "depto": "Prolipa"
+    },
+    {
+        "id": 97445,
+        "nombre": "Unda Pedro Carlo",
+        "corto": "Unda Carlo",
+        "ini": "UC",
+        "depto": "Prolipa"
+    },
+    {
+        "id": 97628,
+        "nombre": "Vanesa Zalamea",
+        "corto": "Vanesa Zalamea",
+        "ini": "VZ",
+        "depto": "Redacción"
+    },
+    {
+        "id": 97753,
+        "nombre": "Vanessa Estefanía Miranda García",
+        "corto": "Vanessa Miranda",
+        "ini": "VM",
+        "depto": "Prolipa"
+    },
+    {
+        "id": 28999,
+        "nombre": "Veronica Alexandra Yucato Conteron",
+        "corto": "Veronica Yucato",
+        "ini": "VY",
+        "depto": "Mantenimiento"
+    },
+    {
+        "id": 74678,
+        "nombre": "VERONICA FERNANDA ALVAREZ ALVARADO",
+        "corto": "VERONICA ALVAREZ",
+        "ini": "VA",
+        "depto": "Prolipa"
+    },
+    {
+        "id": 97894,
+        "nombre": "Viviana Estefania Chavez Molina",
+        "corto": "Viviana Chavez",
+        "ini": "VC",
+        "depto": "Prolipa"
+    },
+    {
+        "id": 85900,
+        "nombre": "Wellington Mauricio González Guaman",
+        "corto": "Wellington González",
+        "ini": "WG",
+        "depto": "Bodega"
+    },
+    {
+        "id": 100911,
+        "nombre": "Wendy Julieth Toapanta Masabanda",
+        "corto": "Wendy Toapanta",
+        "ini": "WT",
+        "depto": "Dirección Editorial"
+    },
+    {
+        "id": 96122,
+        "nombre": "Wendy Liseth Chumbi Timiaza",
+        "corto": "Wendy Chumbi",
+        "ini": "WC",
+        "depto": "Gerencia General"
+    },
+    {
+        "id": 82484,
+        "nombre": "William Fernando Morocho Roman",
+        "corto": "William Morocho",
+        "ini": "WM",
+        "depto": "Diseño"
+    },
+    {
+        "id": 95269,
+        "nombre": "Xavier Alejandro Oviedo Enriquez",
+        "corto": "Xavier Oviedo",
+        "ini": "XO",
+        "depto": "Marketing"
+    },
+    {
+        "id": 553,
+        "nombre": "Xavier Sebastian Calderon Alba",
+        "corto": "Xavier Calderon",
+        "ini": "XC",
+        "depto": "Comercial"
+    },
+    {
+        "id": 98816,
+        "nombre": "Ximena Andrea Malave Tomala",
+        "corto": "Ximena Malave",
+        "ini": "XM",
+        "depto": "Prolipa"
+    },
+    {
+        "id": 73023,
+        "nombre": "Yadira Elizabeth Media Lozano",
+        "corto": "Yadira Media",
+        "ini": "YM",
+        "depto": "Dirección Editorial"
+    },
+    {
+        "id": 95596,
+        "nombre": "Yamilet Rosado Guale",
+        "corto": "Yamilet Rosado",
+        "ini": "YR",
+        "depto": "Comercial"
+    },
+    {
+        "id": 85950,
+        "nombre": "Yesenia Lizbeth Uquilla Cuamacas",
+        "corto": "Yesenia Uquilla",
+        "ini": "YU",
+        "depto": "Redacción"
+    },
+    {
+        "id": 95006,
+        "nombre": "Yolanda Raquel Cabezas Moreno",
+        "corto": "Yolanda Cabezas",
+        "ini": "YC",
+        "depto": "Gerencia General"
+    },
+    {
+        "id": 3762,
+        "nombre": "Yomaira Elizabeth Bastidas Cevallos",
+        "corto": "Yomaira Bastidas",
+        "ini": "YB",
+        "depto": "Redacción"
+    },
+    {
+        "id": 3802,
+        "nombre": "Zulema Pérez Hernández",
+        "corto": "Zulema Pérez",
+        "ini": "ZP",
+        "depto": "Redacción"
+    },
+    {
+        "id": 68205,
+        "nombre": "Ángela Erlinda García Naranjo",
+        "corto": "Ángela García",
+        "ini": "ÁG",
+        "depto": "Redacción"
+    }
+]

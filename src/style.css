@@ -1,0 +1,101 @@
+:root {
+  --quito-blue: #003DA5;
+  --quito-red: #E4002B;
+  --quito-gold: #FFD700;
+}
+
+body {
+  background-color: #0f0f0f;
+  color: #ffffff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.bg-quito-blue { background-color: var(--quito-blue) !important; }
+.bg-quito-red { background-color: var(--quito-red) !important; }
+.bg-quito-gold { background-color: var(--quito-gold) !important; }
+.text-quito-blue { color: var(--quito-blue) !important; }
+.text-quito-red { color: var(--quito-red) !important; }
+.text-quito-gold { color: var(--quito-gold) !important; }
+.border-quito-blue { border-color: var(--quito-blue) !important; }
+.border-quito-red { border-color: var(--quito-red) !important; }
+.border-quito-gold { border-color: var(--quito-gold) !important; }
+
+.btn-quito-blue {
+  background-color: var(--quito-blue);
+  border-color: var(--quito-blue);
+  color: white;
+}
+
+.btn-quito-blue:hover {
+  background-color: #0056b3;
+  border-color: #0056b3;
+  color: white;
+}
+
+.btn-quito-gold {
+  background-color: var(--quito-gold);
+  border-color: var(--quito-gold);
+  color: #000;
+  font-weight: 600;
+}
+
+.btn-quito-gold:hover {
+  background-color: #e6c200;
+  border-color: #e6c200;
+  color: #000;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.card-dark {
+  background-color: #1a1a1a;
+  border: 1px solid #333;
+}
+
+.card-dark:hover {
+  border-color: var(--quito-gold);
+  transform: translateY(-2px);
+  transition: all 0.3s ease;
+}
+
+/* ============ Componentes compartidos (inscripción / reglas / práctica) ============ */
+.page-head { margin-bottom: 1.5rem; }
+.page-head .eyebrow { color: var(--quito-gold); font-weight: 700; letter-spacing: .08em; text-transform: uppercase; font-size: .78rem; }
+.page-head h1 { font-weight: 800; font-size: clamp(1.6rem, 3.5vw, 2.4rem); margin: .2rem 0 .4rem; }
+.page-head p { color: rgba(255,255,255,.65); max-width: 62ch; margin: 0; }
+
+.panel { background: #181818; border: 1px solid #2c2c2c; border-radius: 16px; padding: 1.25rem; }
+.panel-gold { border-color: rgba(255,215,0,.45); }
+.panel h2, .panel h3 { font-weight: 700; }
+
+.avatar { width: 44px; height: 44px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center;
+  font-weight: 800; font-size: .95rem; color: #fff; flex-shrink: 0; letter-spacing: .02em; }
+.avatar-sm { width: 34px; height: 34px; font-size: .78rem; }
+.avatar-lg { width: 56px; height: 56px; font-size: 1.15rem; }
+
+.chip { display: inline-flex; align-items: center; gap: .3rem; padding: .15rem .6rem; border-radius: 999px; font-size: .75rem;
+  font-weight: 600; background: rgba(255,255,255,.08); color: rgba(255,255,255,.8); }
+.chip-gold { background: rgba(255,215,0,.15); color: #ffd700; }
+.chip-green { background: rgba(25,135,84,.2); color: #5fd39a; }
+.chip-amber { background: rgba(255,170,0,.18); color: #ffbf47; }
+
+.text-soft { color: rgba(255,255,255,.65) !important; }
+.form-dark .form-control, .form-dark .form-select { background: #101010; border-color: #3a3a3a; color: #fff; }
+.form-dark .form-control:focus { border-color: #ffd700; box-shadow: 0 0 0 .2rem rgba(255,215,0,.15); }
+.form-dark .form-control::placeholder { color: rgba(255,255,255,.35); }
+.form-dark .form-label { color: rgba(255,255,255,.8); font-weight: 600; font-size: .9rem; }
+
+/* ============ Pantalla completa ============ */
+:root { --alto-nav: 76px; }
+@media (max-width: 991px) { :root { --alto-nav: 82px; } }
+html:fullscreen { --alto-nav: 0px; }
+html:fullscreen .nav-quito,
+html:fullscreen .footer-quito { display: none !important; }
+html, body { overflow-x: hidden; }

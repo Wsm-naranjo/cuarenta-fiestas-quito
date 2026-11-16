@@ -1,0 +1,32 @@
+{
+  "name": "frontend",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "emulador": "cd ../firebase && set JAVA_TOOL_OPTIONS=-Djdk.net.unixdomain.tmpdir=C:/laragon/www/Prolipa_40/firebase/.tmp&& npx -y firebase-tools@14 emulators:start --only database --project demo-cuarenta"
+  },
+  "dependencies": {
+    "@tailwindcss/postcss": "^4.1.17",
+    "@vueuse/core": "^14.1.0",
+    "animate.css": "^4.1.1",
+    "axios": "^1.13.2",
+    "bootstrap": "^5.3.2",
+    "bootstrap-icons": "^1.13.1",
+    "firebase": "^11.10.0",
+    "sweetalert2": "^11.26.3",
+    "vue": "^3.5.24",
+    "vue-router": "^4.6.3",
+    "vuedraggable": "^4.1.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^6.0.1",
+    "autoprefixer": "^10.4.22",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^4.1.17",
+    "vite": "^7.2.4"
+  }
+}

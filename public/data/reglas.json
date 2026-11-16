@@ -1,0 +1,26 @@
+[
+    {
+        "titulo": "Regla 1",
+        "contenido": "al ganador 2 de 3 partidas"
+    },
+    {
+        "titulo": "Regla 2",
+        "contenido": "TODO 2. ronda, 4 iguales, mal repartido, se adelanta al turno, levanta mal el cartón, excepto si tiene 38."
+    },
+    {
+        "titulo": "Regla 3",
+        "contenido": "en 38, se gana con caída o con caída y limpia, NO solo con limpia"
+    },
+    {
+        "titulo": "Regla 4",
+        "contenido": "vale cartón, si tiene hasta 30."
+    },
+    {
+        "titulo": "Regla 5",
+        "contenido": "no hay \"2 POR DAR\""
+    },
+    {
+        "titulo": "Regla 6",
+        "contenido": "el tercer lugar se juega entre los 2 últimos que hayan perdido las semifinales."
+    }
+]
