@@ -106,6 +106,14 @@ function codigoAleatorio() {
   return Array.from(bytes, (b) => abc[b % abc.length]).join('')
 }
 
+/** La ronda se canta, pero el valor (de qué carta es) solo lo ve quien la tiene */
+function ocultarAjeno(h, asiento) {
+  if ((h.tipo === 'ronda' || h.tipo === 'cuatro') && h.jugador !== asiento) {
+    return { ...h, texto: h.texto.replace(/(RONDA|CUATRO) de \S+/, '$1').replace(/CUATRO \S+!/, 'CUATRO iguales!') }
+  }
+  return h
+}
+
 /** Lo que ve cada jugador: solo sus propias cartas */
 function vista(j, asiento) {
   return {
@@ -119,7 +127,7 @@ function vista(j, asiento) {
     reparto: j.reparto,
     mazo: j.mazo.length,
     equipos: j.equipos.map((q) => ({ nombre: q.nombre, puntos: q.puntos, carton: q.carton.length })),
-    historial: j.historial.slice(0, 30),
+    historial: j.historial.slice(0, 30).map((h) => ocultarAjeno(h, asiento)),
     resumenMano: j.resumenMano,
     ganador: j.ganador,
     motivoFin: j.motivoFin,
