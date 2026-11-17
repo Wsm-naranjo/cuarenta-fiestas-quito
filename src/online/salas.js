@@ -18,10 +18,13 @@ import { nuevoJuego, jugarCarta, continuarMano } from '../game/cuarenta.js'
 import { elegirJugada } from '../game/ia.js'
 import { tokenSala } from '../composables/identidad'
 
-const PAUSA_BOT = 1200 // ms entre jugadas automáticas
-const PAUSA_FIN_MANO = 8000 // ms mostrando el resumen de la mano
+const PAUSA_BOT = 1800 // ms entre jugadas automáticas
+const PAUSA_AVISO = 3800 // ms tras una caída, limpia o ronda: da tiempo a leer el aviso
+const PAUSA_FIN_MANO = 10000 // ms mostrando el resumen de la mano
+const ACTIVO = 30000 // presencia más vieja que esto = ya no está en la sala
 const AUSENTE = 45000 // sin señales = la máquina juega por él
 const CONECTADO = 20000
+const CON_AVISO = new Set(['caida', 'limpia', 'caida_limpia', 'ronda', 'cuatro'])
 const BOTS = ['Bot Pancho', 'Bot Rosa', 'Bot Lucho', 'Bot Chela']
 const NIVELES = ['facil', 'normal', 'dificil']
 
@@ -29,12 +32,20 @@ const refSala = (c) => dbRef(db, `salas/${c}`)
 const refPresencia = (c) => dbRef(db, `presencia/${c}`)
 const refLobby = (c) => dbRef(db, `lobby/${c}`)
 
-/** Publica (o quita) la sala en la lista de salas abiertas */
+/** Publica (o quita) la sala en la lista de salas (en espera y jugando) */
 function publicarLobby(codigo, nodo) {
-  const p =
-    nodo && nodo.estado === 'espera' && nodo.libres > 0
-      ? set(refLobby(codigo), { codigo, anfitrion: nodo.host, jugadores: nodo.jugadores, libres: nodo.libres, nivel: nodo.nivel, t: nodo.t })
-      : remove(refLobby(codigo))
+  const p = nodo
+    ? set(refLobby(codigo), {
+        codigo,
+        estado: nodo.estado,
+        anfitrion: nodo.host,
+        jugadores: nodo.jugadores,
+        libres: nodo.libres,
+        bots: nodo.bots || 0,
+        nivel: nodo.nivel,
+        t: nodo.t,
+      })
+    : remove(refLobby(codigo))
   p.catch(() => {})
 }
 // Acciones que cambian lo que se ve en la lista de salas
@@ -68,6 +79,7 @@ function escribir(s) {
     host: anf?.nombre || humanos[0]?.nombre || '—',
     jugadores: humanos.length,
     libres: s.asientos.filter((a) => a === null).length,
+    bots: s.asientos.filter((a) => a?.tipo === 'bot').length,
     version: s.version + 1,
     t: ahora(),
     datos: JSON.stringify({ asientos: s.asientos, juego: s.juego }),
@@ -87,12 +99,18 @@ function juegoNuevo(asientos) {
   const j = nuevoJuego({ nombres })
   j.equipos[0].nombre = `${nombres[0]} y ${nombres[2]}`
   j.equipos[1].nombre = `${nombres[1]} y ${nombres[3]}`
-  j._meta = { ultimoMovTs: ahora(), finManoTs: j.fase === 'fin_mano' ? ahora() : 0 }
+  j._meta = { ultimoMovTs: ahora(), finManoTs: j.fase === 'fin_mano' ? ahora() : 0, pausa: PAUSA_BOT }
+  if (j.historial.some((h) => CON_AVISO.has(h.tipo))) j._meta.pausa = PAUSA_AVISO
   return j
 }
 
-function despuesDeMover(j) {
+/** Hace una jugada (o reparte) y fija cuánto espera la máquina antes de la siguiente */
+function mover(j, fn) {
+  const antes = j.seq
+  fn()
+  const hubo = j.historial.some((h) => h.id > antes && CON_AVISO.has(h.tipo))
   j._meta.ultimoMovTs = ahora()
+  j._meta.pausa = hubo ? PAUSA_AVISO : PAUSA_BOT
   if (j.fase === 'fin_mano') j._meta.finManoTs = ahora()
 }
 
@@ -229,19 +247,17 @@ const ACCIONES = {
     const i = asientoDe(s, token)
     if (i === null || s.estado !== 'jugando') return 'No estás jugando en esta sala.'
     try {
-      jugarCarta(s.juego, i, carta, base && base.length ? base : 0)
+      mover(s.juego, () => jugarCarta(s.juego, i, carta, base && base.length ? base : 0))
     } catch (e) {
       return e.message
     }
-    despuesDeMover(s.juego)
     return null
   },
 
   siguiente(s, token) {
     if (asientoDe(s, token) === null) return 'No estás en esta sala.'
     if (s.juego?.fase !== 'fin_mano') return null
-    continuarMano(s.juego)
-    s.juego._meta.ultimoMovTs = ahora()
+    mover(s.juego, () => continuarMano(s.juego))
     return null
   },
 }
@@ -316,16 +332,50 @@ export async function unirseSala(codigo, nombre) {
   return transaccion(codigo, (s) => ACCIONES.unirse(s, tokenSala(), { nombre }), true)
 }
 
-/** Salas en espera con asientos libres (actualizadas en los últimos 30 min) */
+/**
+ * Salas con gente de verdad ahora mismo. Cruza la lista de salas con la presencia (cada jugador
+ * sentado manda una señal cada 5 s): una sala sin señales recientes está abandonada y no se cuenta.
+ * Llama `callback({ espera, jugando, jugadores })`.
+ */
 export function escucharLobby(callback) {
-  const q = query(dbRef(db, 'lobby'), orderByChild('t'), startAt(ahora() - 30 * 60000))
-  return onValue(q, (snap) => {
-    const lista = []
-    snap.forEach((h) => {
-      lista.push(h.val())
+  let salas = {}
+  let presencia = {}
+  const emitir = () => {
+    const t = ahora()
+    let jugadores = 0
+    const activas = {}
+    for (const [codigo, tokens] of Object.entries(presencia)) {
+      const n = Object.values(tokens || {}).filter((ts) => t - ts < ACTIVO).length
+      if (n) activas[codigo] = n
+      jugadores += n
+    }
+    const lista = Object.values(salas)
+      .filter((s) => activas[s.codigo])
+      .map((s) => ({ ...s, conectados: activas[s.codigo] }))
+      .sort((a, b) => b.t - a.t)
+    callback({
+      espera: lista.filter((s) => s.estado === 'espera' && s.libres > 0),
+      jugando: lista.filter((s) => s.estado === 'jugando'),
+      jugadores,
     })
-    callback(lista.sort((a, b) => b.t - a.t).slice(0, 20))
+  }
+  const offSalas = onValue(query(dbRef(db, 'lobby'), orderByChild('t'), startAt(ahora() - 24 * 3600000)), (snap) => {
+    salas = {}
+    snap.forEach((h) => {
+      salas[h.key] = { codigo: h.key, ...h.val() }
+    })
+    emitir()
   })
+  const offPresencia = onValue(dbRef(db, 'presencia'), (snap) => {
+    presencia = snap.val() || {}
+    emitir()
+  })
+  const reloj = setInterval(emitir, 10000) // quita las salas que se van quedando sin señal
+  return () => {
+    clearInterval(reloj)
+    offSalas()
+    offPresencia()
+  }
 }
 
 /** Borra salas sin actividad en más de un día */
@@ -383,7 +433,7 @@ export function abrirSala(codigo, alCambiar, alFallar) {
     const t = ahora()
     if (j.fase === 'fin_mano') return t - (j._meta?.finManoTs || 0) >= PAUSA_FIN_MANO
     if (j.fase !== 'jugando') return false
-    if (t - (j._meta?.ultimoMovTs || 0) < PAUSA_BOT) return false
+    if (t - (j._meta?.ultimoMovTs || 0) < (j._meta?.pausa || PAUSA_BOT)) return false
     const a = s.asientos[j.turno]
     return a.tipo === 'bot' || t - (presencia[a.token] || 0) > AUSENTE
   }
@@ -396,13 +446,11 @@ export function abrirSala(codigo, alCambiar, alFallar) {
         if (!pendiente(s)) return false
         const j = s.juego
         if (j.fase === 'fin_mano') {
-          continuarMano(j)
-          j._meta.ultimoMovTs = ahora()
+          mover(j, () => continuarMano(j))
         } else {
           const t = j.turno
           const b = elegirJugada(j, t, s.nivel)
-          jugarCarta(j, t, b.cartaId, b.opcionIndex)
-          despuesDeMover(j)
+          mover(j, () => jugarCarta(j, t, b.cartaId, b.opcionIndex))
         }
         return null
       })

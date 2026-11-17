@@ -39,7 +39,7 @@ function aplicar(s) {
       .forEach((h) => {
         const aviso = { id: h.id, texto: h.texto, nuestro: h.equipo === miEquipo(s) }
         avisos.value.push(aviso)
-        setTimeout(() => (avisos.value = avisos.value.filter((a) => a.id !== aviso.id)), 2500)
+        setTimeout(() => (avisos.value = avisos.value.filter((a) => a.id !== aviso.id)), 3800)
       })
     if (hist[0]) ultimoEventoVisto = Math.max(ultimoEventoVisto, hist[0].id)
   }

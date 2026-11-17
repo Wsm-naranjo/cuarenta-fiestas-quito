@@ -10,7 +10,9 @@ const router = useRouter()
 const nombre = ref(nombreGuardado())
 const nivel = ref('normal')
 const codigo = ref('')
-const salas = ref([])
+const salas = ref([]) // en espera
+const enCurso = ref([])
+const jugadores = ref(0)
 const ocupado = ref(false)
 let dejarDeEscuchar = null
 
@@ -57,7 +59,11 @@ async function unirse(cod) {
 }
 
 onMounted(() => {
-  dejarDeEscuchar = escucharLobby((lista) => (salas.value = lista))
+  dejarDeEscuchar = escucharLobby((r) => {
+    salas.value = r.espera
+    enCurso.value = r.jugando
+    jugadores.value = r.jugadores
+  })
 })
 onUnmounted(() => dejarDeEscuchar?.())
 </script>
@@ -114,6 +120,11 @@ onUnmounted(() => dejarDeEscuchar?.())
     </div>
     <div class="col-lg-5">
     <div class="panel h-100">
+      <div class="contadores mb-3">
+        <div><span class="n">{{ jugadores }}</span><span class="l">jugadores conectados</span></div>
+        <div><span class="n">{{ enCurso.length }}</span><span class="l">partidas en curso</span></div>
+        <div><span class="n">{{ salas.length }}</span><span class="l">salas esperando</span></div>
+      </div>
       <h2 class="h6 mb-3">Salas esperando jugadores</h2>
       <p v-if="!salas.length" class="text-soft small mb-0">No hay salas abiertas ahora. ¡Crea una!</p>
       <div v-for="s in salas" :key="s.codigo" class="sala-item">
@@ -123,6 +134,20 @@ onUnmounted(() => dejarDeEscuchar?.())
         </div>
         <button class="btn btn-sm btn-outline-light" :disabled="ocupado" @click="unirse(s.codigo)">Unirme</button>
       </div>
+
+      <template v-if="enCurso.length">
+        <h2 class="h6 mt-4 mb-3">Partidas en curso</h2>
+        <div v-for="s in enCurso" :key="s.codigo" class="sala-item">
+          <div>
+            <div class="fw-bold">Mesa de {{ s.anfitrion }} <span class="chip ms-1">{{ s.codigo }}</span></div>
+            <div class="small text-soft">
+              <i class="bi bi-circle-fill text-success" style="font-size: 0.5rem"></i> {{ s.conectados }} conectado(s)
+              <template v-if="s.bots"> · {{ s.bots }} bot(s)</template> · {{ NIVELES[s.nivel] }}
+            </div>
+          </div>
+          <button class="btn btn-sm btn-outline-light" @click="router.push(`/40-Prolipa/practica/${s.codigo}`)">Ver</button>
+        </div>
+      </template>
     </div>
     </div>
     </div>
@@ -171,6 +196,28 @@ onUnmounted(() => dejarDeEscuchar?.())
   letter-spacing: 0.3em;
   font-weight: 800;
   max-width: 200px;
+}
+.contadores {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem;
+  text-align: center;
+}
+.contadores > div {
+  background: #1d1d1d;
+  border-radius: 12px;
+  padding: 0.6rem 0.3rem;
+}
+.contadores .n {
+  display: block;
+  font-size: 1.6rem;
+  font-weight: 900;
+  color: #ffd700;
+  line-height: 1.1;
+}
+.contadores .l {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.6);
 }
 .sala-item {
   display: flex;
