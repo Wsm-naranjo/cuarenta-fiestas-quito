@@ -21,12 +21,12 @@ watch(nombre, (n) => guardarNombre(n.trim()))
 const NIVELES = { facil: 'Fácil', normal: 'Normal', dificil: 'Difícil' }
 
 function errorAlerta(e) {
-  Swal.fire({ icon: 'error', title: 'Ups', text: e?.message || 'No se pudo conectar.', background: '#1a1a1a', color: '#fff' })
+  Swal.fire({ icon: 'error', title: 'Ups', text: e?.message || 'No se pudo conectar.', background: '#1a1c22', color: '#fff' })
 }
 
 function validarNombre() {
   if (nombre.value.trim()) return true
-  Swal.fire({ icon: 'info', title: 'Escribe tu nombre', text: 'Así te verán los demás en la mesa.', background: '#1a1a1a', color: '#fff' })
+  Swal.fire({ icon: 'info', title: 'Escribe tu nombre', text: 'Así te verán los demás en la mesa.', background: '#1a1c22', color: '#fff' })
   return false
 }
 
@@ -70,8 +70,9 @@ onUnmounted(() => dejarDeEscuchar?.())
 
 <template>
   <div class="lobby">
-    <header class="mb-4">
-      <h1 class="h3 fw-bold mb-1">Practica el 40</h1>
+    <header class="page-head">
+      <span class="eyebrow"><i class="bi bi-controller"></i>Simulador</span>
+      <h1>Practica el 40</h1>
       <p class="text-soft mb-0">Juega solo contra la máquina o crea una sala para jugar con tus compañeros (2 vs 2). Los asientos vacíos los juega la máquina.</p>
     </header>
 
@@ -166,15 +167,15 @@ onUnmounted(() => dejarDeEscuchar?.())
   align-items: flex-start;
   gap: 0.25rem;
   text-align: left;
-  background: #181818;
-  border: 2px solid #2f2f2f;
-  border-radius: 16px;
+  background: linear-gradient(180deg, var(--superficie-2), var(--superficie));
+  border: 1px solid var(--borde);
+  border-radius: var(--radio);
   padding: 1.1rem 1.2rem;
   color: #fff;
   transition: border-color 0.15s ease, transform 0.15s ease;
 }
 .opcion-grande:hover:not(:disabled) {
-  border-color: #ffd700;
+  border-color: rgba(255, 215, 0, 0.6);
   transform: translateY(-2px);
 }
 .opcion-grande i {
@@ -185,7 +186,8 @@ onUnmounted(() => dejarDeEscuchar?.())
   color: #ffd700;
 }
 .opcion-grande .t {
-  font-weight: 800;
+  font-family: var(--fuente-titulos);
+  font-weight: 700;
   font-size: 1.1rem;
 }
 .opcion-grande .d {
@@ -204,14 +206,16 @@ onUnmounted(() => dejarDeEscuchar?.())
   text-align: center;
 }
 .contadores > div {
-  background: #1d1d1d;
+  background: #101218;
+  border: 1px solid var(--borde);
   border-radius: 12px;
   padding: 0.6rem 0.3rem;
 }
 .contadores .n {
   display: block;
+  font-family: var(--fuente-titulos);
   font-size: 1.6rem;
-  font-weight: 900;
+  font-weight: 800;
   color: #ffd700;
   line-height: 1.1;
 }
@@ -225,6 +229,6 @@ onUnmounted(() => dejarDeEscuchar?.())
   align-items: center;
   gap: 1rem;
   padding: 0.6rem 0;
-  border-top: 1px solid #262626;
+  border-top: 1px solid var(--borde);
 }
 </style>

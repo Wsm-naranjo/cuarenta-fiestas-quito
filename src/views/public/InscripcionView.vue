@@ -17,7 +17,8 @@ const enviando = ref(false)
 const error = ref('')
 const recienInscrita = ref(null)
 let dejarDeEscuchar = null
-const sorteado = ref(false) // ya se hizo el sorteo: inscripciones cerradas
+const sorteado = ref(false) // inscripciones cerradas (por el administrador o por el sorteo)
+const conCuadro = ref(false) // ya hay sorteo
 let offTorneo = null
 
 /** id → pareja en la que está */
@@ -55,7 +56,10 @@ function otraPersona() {
 }
 
 onMounted(async () => {
-  offTorneo = escucharTorneo((t) => (sorteado.value = !!t))
+  offTorneo = escucharTorneo((t) => {
+    sorteado.value = !!t
+    conCuadro.value = !!t?.sorteado
+  })
   try {
     usuarios.value = await cargarUsuarios()
     dejarDeEscuchar = escucharParejas(
@@ -82,6 +86,7 @@ onUnmounted(() => {
 <template>
   <div class="inscripcion">
     <header class="page-head">
+      <span class="eyebrow"><i class="bi bi-pencil-square"></i>Inscripción</span>
       <h1>Inscribe a tu pareja</h1>
       <p>Busca tu nombre en la lista de colaboradores Prolipa y elige a tu compañero. Cada persona puede estar en una sola pareja.</p>
     </header>
@@ -106,10 +111,10 @@ onUnmounted(() => {
       </div>
 
       <!-- Sorteo hecho: ya no se puede inscribir -->
-      <div v-else-if="sorteado" class="panel text-center py-5">
-        <i class="bi bi-lock-fill display-5 text-warning"></i>
-        <h2 class="h4 mt-3">Inscripciones cerradas</h2>
-        <p class="text-soft">El sorteo ya se hizo y el torneo está en marcha.</p>
+      <div v-else-if="sorteado" class="panel vacio-estado">
+        <div class="icono"><i class="bi bi-lock-fill"></i></div>
+        <h2>Inscripciones cerradas</h2>
+        <p>{{ conCuadro ? 'El sorteo ya se hizo y el torneo está en marcha.' : 'Ya no se aceptan más parejas. Pronto se hace el sorteo.' }}</p>
         <router-link to="/40-Prolipa/torneo" class="btn btn-quito-gold"><i class="bi bi-trophy me-1"></i>Ver el cuadro del torneo</router-link>
       </div>
 
@@ -160,7 +165,7 @@ onUnmounted(() => {
   margin: 0 auto;
 }
 .espera-paso {
-  border: 1px dashed #3a3a3a;
+  border: 1px dashed var(--borde-fuerte);
   border-radius: 12px;
   padding: 0.75rem 1rem;
 }

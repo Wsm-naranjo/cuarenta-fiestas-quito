@@ -91,7 +91,7 @@ function quitar() {
   display: flex;
   align-items: center;
   gap: 0.75rem;
-  background: #101010;
+  background: #0f1116;
   border: 2px solid #ffd700;
   border-radius: 12px;
   padding: 0.6rem 0.75rem;
@@ -105,8 +105,8 @@ function quitar() {
   list-style: none;
   margin: 0;
   padding: 0.3rem;
-  background: #161616;
-  border: 1px solid #3a3a3a;
+  background: var(--superficie-2);
+  border: 1px solid var(--borde-fuerte);
   border-radius: 12px;
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
   max-height: 340px;

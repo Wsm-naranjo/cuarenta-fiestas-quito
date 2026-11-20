@@ -378,6 +378,25 @@ export function escucharLobby(callback) {
   }
 }
 
+/** (Administrador) Cierra una sala: la borra con su ficha y su presencia. Quien esté dentro ve "Esta sala ya no existe". */
+export async function cerrarSala(codigo) {
+  await Promise.all([remove(refSala(codigo)), remove(refLobby(codigo)), remove(refPresencia(codigo))])
+}
+
+/** (Administrador) Borra las salas sin nadie conectado y sin movimiento en la última hora. Devuelve cuántas borró. */
+export async function limpiarAbandonadas() {
+  const t = ahora()
+  const [viejas, pres] = await Promise.all([get(query(dbRef(db, 'salas'), orderByChild('t'), endAt(t - 3600000))), get(dbRef(db, 'presencia'))])
+  const presencia = pres.val() || {}
+  const borrar = []
+  viejas.forEach((h) => {
+    const activos = Object.values(presencia[h.key] || {}).filter((ts) => t - ts < ACTIVO).length
+    if (!activos) borrar.push(h.key)
+  })
+  await Promise.all(borrar.map(cerrarSala))
+  return borrar.length
+}
+
 /** Borra salas sin actividad en más de un día */
 async function limpiarViejas() {
   try {

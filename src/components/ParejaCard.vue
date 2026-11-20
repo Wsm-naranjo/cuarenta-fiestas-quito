@@ -12,7 +12,7 @@ defineProps({
     <div class="d-flex justify-content-between align-items-start mb-3 gap-2">
       <div class="min-w-0">
         <div class="numero">Pareja #{{ pareja.numero }}</div>
-        <div class="nombre text-truncate">{{ pareja.nombre_pareja || 'Sin nombre de equipo' }}</div>
+        <div class="nombre text-truncate" :class="{ 'sin-nombre': !pareja.nombre_pareja }">{{ pareja.nombre_pareja || 'Sin nombre de pareja' }}</div>
       </div>
       <span v-if="pareja.estado === 'pendiente'" class="chip chip-amber"><i class="bi bi-hourglass-split"></i>Pendiente</span>
       <span v-else class="chip chip-green"><i class="bi bi-check2-circle"></i>Inscrita</span>
@@ -31,22 +31,35 @@ defineProps({
 
 <style scoped>
 .pareja-card {
-  background: linear-gradient(160deg, #1b1b1b, #141414);
-  border: 1px solid #2c2c2c;
-  border-left: 4px solid #003da5;
-  border-radius: 14px;
-  padding: 1rem 1.1rem;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(180deg, var(--superficie-2), var(--superficie));
+  border: 1px solid var(--borde);
+  border-radius: var(--radio);
+  padding: 1.1rem 1.2rem 1.1rem 1.35rem;
   height: 100%;
   transition: transform 0.15s ease, border-color 0.15s ease;
 }
+.pareja-card::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: linear-gradient(180deg, var(--quito-blue), var(--quito-red));
+  transition: background 0.15s ease;
+}
 .pareja-card:hover {
   transform: translateY(-2px);
-  border-color: #444;
-  border-left-color: #ffd700;
+  border-color: var(--borde-fuerte);
+}
+.pareja-card:hover::before,
+.pareja-card.resaltar::before {
+  background: var(--quito-gold);
 }
 .pareja-card.resaltar {
   border-color: rgba(255, 215, 0, 0.6);
-  border-left-color: #ffd700;
   box-shadow: 0 0 0 1px rgba(255, 215, 0, 0.25);
 }
 .numero {
@@ -57,8 +70,14 @@ defineProps({
   font-weight: 700;
 }
 .nombre {
-  font-weight: 800;
-  font-size: 1.05rem;
+  font-family: var(--fuente-titulos);
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+.nombre.sin-nombre {
+  color: var(--texto-tenue);
+  font-weight: 600;
+  font-size: 1rem;
 }
 .jugador + .jugador {
   margin-top: 0.6rem;
