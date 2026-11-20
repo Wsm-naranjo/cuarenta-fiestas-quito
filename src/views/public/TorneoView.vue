@@ -45,7 +45,7 @@ onUnmounted(() => offs.forEach((f) => f?.()))
       <p v-if="torneo">Las inscripciones ya se cerraron con <b>{{ inscritas }}</b> parejas. Pronto se hace el sorteo y aquí verás quién juega contra quién.</p>
       <template v-else>
         <p>Hay <b>{{ inscritas }}</b> parejas inscritas. Cuando cierren las inscripciones aquí verás quién juega contra quién.</p>
-        <router-link to="/40-Prolipa/inscripcion" class="btn btn-quito-gold"><i class="bi bi-pencil-square me-1"></i>Inscribir mi pareja</router-link>
+        <router-link to="/40-Prolipa/parejas" class="btn btn-quito-gold"><i class="bi bi-pencil-square me-1"></i>Inscribir mi pareja</router-link>
       </template>
     </div>
 

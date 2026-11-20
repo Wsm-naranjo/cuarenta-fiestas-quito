@@ -6,7 +6,6 @@ const route = useRoute()
 
 const enlaces = [
   { to: '/40-Prolipa', icon: 'bi-house-door', iconActivo: 'bi-house-door-fill', texto: 'Inicio', corto: 'Inicio', exacto: true },
-  { to: '/40-Prolipa/inscripcion', icon: 'bi-pencil-square', iconActivo: 'bi-pencil-square', texto: 'Inscripción', corto: 'Inscribir' },
   { to: '/40-Prolipa/parejas', icon: 'bi-people', iconActivo: 'bi-people-fill', texto: 'Parejas', corto: 'Parejas' },
   { to: '/40-Prolipa/torneo', icon: 'bi-trophy', iconActivo: 'bi-trophy-fill', texto: 'Torneo', corto: 'Torneo' },
   { to: '/40-Prolipa/reglas', icon: 'bi-book', iconActivo: 'bi-book-fill', texto: 'Reglas', corto: 'Reglas' },
@@ -174,6 +173,12 @@ const activo = (e) => (e.exacto ? route.path === e.to || route.path === e.to + '
 .enlace i {
   font-size: 1rem;
 }
+.enlace:focus {
+  outline: none;
+}
+.enlace:focus-visible {
+  box-shadow: inset 0 0 0 2px rgba(127, 178, 255, 0.7);
+}
 .enlace:hover {
   color: #fff;
   background: rgba(255, 255, 255, 0.06);
@@ -225,7 +230,7 @@ const activo = (e) => (e.exacto ? route.path === e.to || route.path === e.to + '
   bottom: 0;
   z-index: 1030;
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   padding: 0.35rem 0.25rem calc(0.35rem + env(safe-area-inset-bottom));
   background: rgba(14, 15, 20, 0.92);
   backdrop-filter: saturate(160%) blur(14px);

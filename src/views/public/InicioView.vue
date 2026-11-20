@@ -25,7 +25,7 @@ const etapa = computed(() => {
 })
 const ETAPAS = {
   cargando: { chip: 'Cargando…', clase: '', icono: 'bi-hourglass', cta: null },
-  abiertas: { chip: 'Inscripciones abiertas', clase: 'chip-gold', vivo: true, cta: { to: '/40-Prolipa/inscripcion', icono: 'bi-pencil-square', texto: 'Inscribir mi pareja' } },
+  abiertas: { chip: 'Inscripciones abiertas', clase: 'chip-gold', vivo: true, cta: { to: '/40-Prolipa/parejas', icono: 'bi-pencil-square', texto: 'Inscribir mi pareja' } },
   cerradas: { chip: 'Inscripciones cerradas · pronto el sorteo', clase: 'chip-amber', icono: 'bi-lock-fill', cta: { to: '/40-Prolipa/parejas', icono: 'bi-people-fill', texto: 'Ver las parejas' } },
   en_curso: { chip: 'Torneo en marcha', clase: 'chip-gold', vivo: true, cta: { to: '/40-Prolipa/torneo', icono: 'bi-trophy-fill', texto: 'Ver el cuadro' } },
   terminado: { chip: 'Torneo terminado', clase: 'chip-gold', icono: 'bi-trophy-fill', cta: { to: '/40-Prolipa/torneo', icono: 'bi-trophy-fill', texto: 'Ver el cuadro final' } },
