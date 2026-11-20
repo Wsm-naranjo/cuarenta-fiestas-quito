@@ -7,7 +7,7 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "emulador": "cd ../firebase && set JAVA_TOOL_OPTIONS=-Djdk.net.unixdomain.tmpdir=C:/laragon/www/Prolipa_40/firebase/.tmp&& npx -y firebase-tools@14 emulators:start --only database --project demo-cuarenta"
+    "emulador": "cd ../firebase && set JAVA_TOOL_OPTIONS=-Djdk.net.unixdomain.tmpdir=C:/laragon/www/Prolipa_40/firebase/.tmp&& npx -y firebase-tools@14 emulators:start --only database,auth --project demo-cuarenta"
   },
   "dependencies": {
     "@tailwindcss/postcss": "^4.1.17",

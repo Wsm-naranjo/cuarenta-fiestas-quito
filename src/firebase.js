@@ -9,7 +9,7 @@ const config = usaEmulador
   ? { projectId: 'demo-cuarenta', databaseURL: 'https://demo-cuarenta-default-rtdb.firebaseio.com', apiKey: 'demo' }
   : firebaseConfig
 
-const app = initializeApp(config)
+export const app = initializeApp(config)
 export const db = getDatabase(app)
 
 // En `npm run dev` el emulador pasa por el proxy de Vite (mismo puerto); en un build, directo al 9000

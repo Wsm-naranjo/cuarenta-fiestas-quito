@@ -6,7 +6,8 @@ La app es solo frontend (Vue). No usa Laravel ni MySQL:
 |---|---|
 | Lista de colaboradores (nombre y departamento) | `public/data/usuarios.json` |
 | Reglas Prolipa | `public/data/reglas.json` (edítalo y vuelve a publicar) |
-| Parejas inscritas y salas en línea | Firebase Realtime Database |
+| Parejas inscritas, torneo y salas en línea | Firebase Realtime Database |
+| Cuenta del administrador | Firebase Authentication (correo y contraseña, gratis) |
 
 ## 1. Crear Firebase (una vez)
 
@@ -21,7 +22,17 @@ La app es solo frontend (Vue). No usa Laravel ni MySQL:
   "rules": {
     ".read": false,
     ".write": false,
-    "inscripciones": { ".read": true, ".write": true },
+    "admins": {
+      "$uid": { ".read": "auth != null && auth.uid === $uid" }
+    },
+    "torneo": {
+      ".read": true,
+      ".write": "auth != null && root.child('admins').child(auth.uid).val() === true"
+    },
+    "inscripciones": {
+      ".read": true,
+      ".write": "!root.child('torneo').exists() || (auth != null && root.child('admins').child(auth.uid).val() === true)"
+    },
     "salas": { ".read": true, ".indexOn": ["t"], "$codigo": { ".write": true } },
     "lobby": { ".read": true, ".indexOn": ["t"], "$codigo": { ".write": true } },
     "presencia": { ".read": true, "$codigo": { ".write": true } }
@@ -32,8 +43,26 @@ La app es solo frontend (Vue). No usa Laravel ni MySQL:
 4. **⚙️ Configuración del proyecto → Tus apps → `</>` Web** → registrar → copia el `firebaseConfig`
    en `src/firebase.config.js`.
 
-> Para pruebas está bien así: cualquiera con el enlace puede inscribir o jugar. Para borrar una pareja
-> mal inscrita: Realtime Database → `inscripciones` → borrar ese registro.
+> Cualquiera con el enlace puede inscribirse y jugar. Una vez hecho el sorteo, solo el administrador puede
+> tocar las inscripciones, y el torneo (cuadro y resultados) solo lo puede cambiar el administrador.
+
+### Administrador del torneo (una vez)
+
+Página: `https://TU-USUARIO.github.io/TU-REPO/#/40-Prolipa/admin` (no aparece en el menú).
+
+1. Menú izquierdo: **Seguridad → Authentication** → **Comenzar** → pestaña **Método de acceso** →
+   **Correo electrónico/contraseña** → activar (solo la primera opción) → **Guardar**.
+2. Pestaña **Usuarios** → **Agregar usuario** → tu correo y una contraseña.
+3. Entra a la página de admin con ese correo. Te mostrará tu **UID** con un botón para copiarlo.
+4. **Realtime Database → Datos** → en la raíz, botón **+** → nombre `admins` → dentro, otro **+** con
+   nombre = tu UID y valor `true` (sin comillas) → **Agregar**.
+5. Recarga la página de admin.
+
+Para agregar a otro administrador: repite los pasos 2 a 4 con su correo.
+
+Desde la página de admin se puede: borrar parejas mal inscritas, sortear el cuadro (si las parejas no son
+8, 16, 32…, algunas pasan directo a la 2.ª ronda por sorteo), marcar ganadores con marcador opcional,
+dar W.O., deshacer resultados, volver a sortear (si aún no hay resultados) y reiniciar el torneo.
 
 ### Límites del plan gratis (Spark)
 
@@ -58,7 +87,7 @@ Los enlaces usan `#` (por ejemplo `.../#/40-Prolipa/practica/ABCDE`) para que fu
 Mientras `apiKey` esté vacío en `src/firebase.config.js`, la app usa el emulador local:
 
 ```bash
-npm run emulador   # terminal 1 (necesita Java)
+npm run emulador   # terminal 1 (necesita Java): base de datos + Authentication
 npm run dev        # terminal 2 → http://localhost:5173
 ```
 

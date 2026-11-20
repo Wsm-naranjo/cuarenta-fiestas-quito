@@ -21,7 +21,7 @@ import { tokenSala } from '../composables/identidad'
 const PAUSA_BOT = 1800 // ms entre jugadas automáticas
 const PAUSA_AVISO = 3800 // ms tras una caída, limpia o ronda: da tiempo a leer el aviso
 const PAUSA_FIN_MANO = 10000 // ms mostrando el resumen de la mano
-const ACTIVO = 30000 // presencia más vieja que esto = ya no está en la sala
+const ACTIVO = 90000 // presencia más vieja que esto = ya no está (las pestañas en segundo plano laten 1 vez por minuto)
 const AUSENTE = 45000 // sin señales = la máquina juega por él
 const CONECTADO = 20000
 const CON_AVISO = new Set(['caida', 'limpia', 'caida_limpia', 'ronda', 'cuatro'])
@@ -349,9 +349,9 @@ export function escucharLobby(callback) {
       if (n) activas[codigo] = n
       jugadores += n
     }
-    const lista = Object.values(salas)
-      .filter((s) => activas[s.codigo])
-      .map((s) => ({ ...s, conectados: activas[s.codigo] }))
+    // Una sala con gente pero sin ficha en la lista (p. ej. creada con una versión anterior) igual cuenta
+    const lista = Object.keys(activas)
+      .map((codigo) => ({ codigo, estado: 'jugando', anfitrion: '', bots: 0, t: 0, ...salas[codigo], conectados: activas[codigo] }))
       .sort((a, b) => b.t - a.t)
     callback({
       espera: lista.filter((s) => s.estado === 'espera' && s.libres > 0),
@@ -399,6 +399,8 @@ async function limpiarViejas() {
 export function abrirSala(codigo, alCambiar, alFallar) {
   const token = tokenSala()
   let sala = null // estado completo actual
+  let crudo = null // nodo tal como está en Firebase (para la lista de salas)
+  let latidos = 0
   let presencia = {}
   let cargada = false
   let avanzando = false
@@ -410,8 +412,11 @@ export function abrirSala(codigo, alCambiar, alFallar) {
   const offSala = onValue(
     refSala(codigo),
     (snap) => {
+      const primera = !cargada
       cargada = true
-      sala = leer(snap.val())
+      crudo = snap.val()
+      sala = leer(crudo)
+      if (primera && sala && asientoDe(sala, token) !== null) publicarLobby(codigo, crudo)
       if (!sala) alFallar('Esta sala ya no existe.')
       else emitir()
     },
@@ -422,8 +427,11 @@ export function abrirSala(codigo, alCambiar, alFallar) {
   })
 
   // Señal de vida cada 5 s
+  // y cada minuto se refresca la ficha de la sala en la lista (se repara sola si faltaba)
   const latido = () => {
-    if (sala && asientoDe(sala, token) !== null) set(dbRef(db, `presencia/${codigo}/${token}`), ahora()).catch(() => {})
+    if (!sala || asientoDe(sala, token) === null) return
+    set(dbRef(db, `presencia/${codigo}/${token}`), ahora()).catch(() => {})
+    if (++latidos % 12 === 0 && crudo) publicarLobby(codigo, crudo)
   }
 
   // ¿Le toca jugar a la máquina (bot o ausente) o pasar a la siguiente mano?

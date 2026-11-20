@@ -13,6 +13,10 @@ export default defineConfig({
     proxy: {
       '/.ws': { target: 'ws://127.0.0.1:9000', ws: true, changeOrigin: true },
       '/.lp': { target: 'http://127.0.0.1:9000', changeOrigin: true },
+      // y el emulador de Authentication (puerto 9099), para la página de administración
+      '/identitytoolkit.googleapis.com': { target: 'http://127.0.0.1:9099', changeOrigin: true },
+      '/securetoken.googleapis.com': { target: 'http://127.0.0.1:9099', changeOrigin: true },
+      '/emulator': { target: 'http://127.0.0.1:9099', changeOrigin: true },
     },
   },
   preview: {

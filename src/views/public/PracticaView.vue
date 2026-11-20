@@ -139,10 +139,10 @@ onUnmounted(() => dejarDeEscuchar?.())
         <h2 class="h6 mt-4 mb-3">Partidas en curso</h2>
         <div v-for="s in enCurso" :key="s.codigo" class="sala-item">
           <div>
-            <div class="fw-bold">Mesa de {{ s.anfitrion }} <span class="chip ms-1">{{ s.codigo }}</span></div>
+            <div class="fw-bold">{{ s.anfitrion ? 'Mesa de ' + s.anfitrion : 'Mesa' }} <span class="chip ms-1">{{ s.codigo }}</span></div>
             <div class="small text-soft">
               <i class="bi bi-circle-fill text-success" style="font-size: 0.5rem"></i> {{ s.conectados }} conectado(s)
-              <template v-if="s.bots"> · {{ s.bots }} bot(s)</template> · {{ NIVELES[s.nivel] }}
+              <template v-if="s.bots"> · {{ s.bots }} bot(s)</template><template v-if="s.nivel"> · {{ NIVELES[s.nivel] }}</template>
             </div>
           </div>
           <button class="btn btn-sm btn-outline-light" @click="router.push(`/40-Prolipa/practica/${s.codigo}`)">Ver</button>

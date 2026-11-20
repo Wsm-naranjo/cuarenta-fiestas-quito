@@ -11,6 +11,7 @@ const enlaces = [
   { to: '/40-Prolipa', icon: 'bi-house-door', texto: 'Inicio', exacto: true },
   { to: '/40-Prolipa/inscripcion', icon: 'bi-pencil-square', texto: 'Inscripción' },
   { to: '/40-Prolipa/parejas', icon: 'bi-people', texto: 'Parejas' },
+  { to: '/40-Prolipa/torneo', icon: 'bi-trophy', texto: 'Torneo' },
   { to: '/40-Prolipa/reglas', icon: 'bi-book', texto: 'Reglas' },
   { to: '/40-Prolipa/practica', icon: 'bi-controller', texto: 'Practicar' },
 ]

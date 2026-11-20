@@ -3,6 +3,7 @@ import { ref, computed, onMounted, onUnmounted } from 'vue'
 import BuscadorPersona from '../../components/BuscadorPersona.vue'
 import ParejaCard from '../../components/ParejaCard.vue'
 import { usuarios as cargarUsuarios, escucharParejas, inscribir } from '../../online/inscripciones'
+import { escucharTorneo } from '../../online/torneo'
 
 const usuarios = ref([])
 const parejas = ref([])
@@ -16,6 +17,8 @@ const enviando = ref(false)
 const error = ref('')
 const recienInscrita = ref(null)
 let dejarDeEscuchar = null
+const sorteado = ref(false) // ya se hizo el sorteo: inscripciones cerradas
+let offTorneo = null
 
 /** id → pareja en la que está */
 const parejaDe = computed(() => {
@@ -52,6 +55,7 @@ function otraPersona() {
 }
 
 onMounted(async () => {
+  offTorneo = escucharTorneo((t) => (sorteado.value = !!t))
   try {
     usuarios.value = await cargarUsuarios()
     dejarDeEscuchar = escucharParejas(
@@ -69,7 +73,10 @@ onMounted(async () => {
     cargando.value = false
   }
 })
-onUnmounted(() => dejarDeEscuchar?.())
+onUnmounted(() => {
+  dejarDeEscuchar?.()
+  offTorneo?.()
+})
 </script>
 
 <template>
@@ -96,6 +103,14 @@ onUnmounted(() => dejarDeEscuchar?.())
           <button class="btn btn-outline-light" @click="otraPersona">Inscribir a otra persona</button>
         </div>
         <p class="small text-soft text-center mt-3 mb-0">¿Hay un error? Pide al organizador que lo corrija.</p>
+      </div>
+
+      <!-- Sorteo hecho: ya no se puede inscribir -->
+      <div v-else-if="sorteado" class="panel text-center py-5">
+        <i class="bi bi-lock-fill display-5 text-warning"></i>
+        <h2 class="h4 mt-3">Inscripciones cerradas</h2>
+        <p class="text-soft">El sorteo ya se hizo y el torneo está en marcha.</p>
+        <router-link to="/40-Prolipa/torneo" class="btn btn-quito-gold"><i class="bi bi-trophy me-1"></i>Ver el cuadro del torneo</router-link>
       </div>
 
       <!-- Formulario -->
